@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from fastapi import FastAPI, File, UploadFile, HTTPException, Form, Depends
 from fastapi.staticfiles import StaticFiles
