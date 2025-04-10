@@ -16,9 +16,10 @@ app = FastAPI()
 @app.on_event("startup")
 async def startup_db():
     print("Database URL:", os.getenv("DATABASE_URL")) 
+    from database import Base, engine
     Base.metadata.create_all(bind=engine)
     print("Database tables created/verified")
-    
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Initialize database
