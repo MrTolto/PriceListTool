@@ -16,8 +16,16 @@ app = FastAPI()
 # Add this right after your FastAPI app initialization
 @app.on_event("startup")
 async def startup_db():
-    print("Database URL:", os.getenv("DATABASE_URL")) 
-    from database import Base, engine
+    async def startup_db():
+    db_url = os.getenv("DATABASE_URL")
+    print(f"Using database at: {db_url}")
+    try:
+        Base.metadata.create_all(bind=engine)
+        print("Database connection successful!")
+    except Exception as e:
+        print(f"Database connection failed: {str(e)}")
+        raise 
+    
     Base.metadata.create_all(bind=engine)
     print("Database tables created/verified")
 
