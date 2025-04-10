@@ -1,9 +1,7 @@
-fastapi
+fastapi>=0.68.0
 uvicorn[standard]
 python-multipart
-openpyxl
 pandas
-psycopg2-binary  # For PostgreSQL
-databases[postgresql]  # If using PostgreSQL
+openpyxl
 sqlalchemy>=2.0.0
-psycopg2-binary
+psycopg2-binary==2.9.9  # Critical for PostgreSQL
