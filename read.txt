@@ -1,0 +1,13 @@
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+.\venv\Scripts\Activate.ps1
+
+
+run locally:
+uvicorn main:app --reload
+
+
+
+ip:http://localhost:8000/docs
+

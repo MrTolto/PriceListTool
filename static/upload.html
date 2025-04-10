@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Price List</title>
+</head>
+<body>
+    <h1>Upload Price List</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <h2>Option 1: Upload Excel File (.xlsx)</h2>
+        <input type="file" name="file" accept=".xlsx">
+        <br><br>
+        
+        <h2>Option 2: Paste Text Data</h2>
+        <textarea name="text_data" rows="10" cols="50" placeholder="Paste your .txt formatted data here..."></textarea>
+        <br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

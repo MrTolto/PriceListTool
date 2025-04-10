@@ -1,2 +1,9 @@
 fastapi
 uvicorn[standard]
+python-multipart
+openpyxl
+pandas
+sqlalchemy
+psycopg2-binary  # For PostgreSQL
+databases[postgresql]  # If using PostgreSQL
+psycopg2-binary==2.9.9
