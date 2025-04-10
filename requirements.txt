@@ -3,7 +3,7 @@ uvicorn[standard]
 python-multipart
 openpyxl
 pandas
-sqlalchemy>=2.0.0
 psycopg2-binary  # For PostgreSQL
 databases[postgresql]  # If using PostgreSQL
-psycopg2-binary  # For PostgreSQL
+sqlalchemy>=2.0.0
+psycopg2-binary

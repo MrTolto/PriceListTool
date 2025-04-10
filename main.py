@@ -22,9 +22,6 @@ async def startup_db():
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# Initialize database
-Base.metadata.create_all(bind=engine)
-
 # Database dependency
 def get_db():
     db = SessionLocal()

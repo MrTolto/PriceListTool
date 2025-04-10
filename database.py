@@ -1,9 +1,10 @@
 import os
 from pathlib import Path
 from datetime import datetime
+from typing import TYPE_CHECKING
 from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session
 
 # Database configuration - Render automatically provides DATABASE_URL for PostgreSQL
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./prices.db")
@@ -31,7 +32,7 @@ class Product(Base):
     __tablename__ = 'products'
     
     id = Column(Integer, primary_key=True, index=True)
-    product_number = Column(String(50), unique=True, index=True)  # Added max length
+    product_number = Column(String(50), unique=True, index=True)
     canonical_name = Column(String(100))
     category = Column(String(50))
     description = Column(String(200), nullable=True)
